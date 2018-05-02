@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {$WebSocket} from './angular2-websocket';
+import {MyWebSocket} from './angular2-websocket';
 
 @Component({
   selector: 'my-app',
@@ -11,14 +11,14 @@ import {$WebSocket} from './angular2-websocket';
 export class AppComponent {
 
   counter: string = 'not known';
-  ws: $Websocket;
+  ws: MyWebsocket;
   constructor() {
-    this.ws = new $WebSocket("ws://localhost:8088/counter");
+    this.ws = new MyWebSocket("ws://localhost:8088/counter");
   }
 
   subscribe($event) {
     console.log("trying to subscribe to ws");
-    this.ws = new $WebSocket("ws://localhost:8088/counter");
+    this.ws = new MyWebSocket("ws://localhost:8088/counter");
     this.ws.send("Hello");
     this.ws.getDataStream().subscribe(
       res => {

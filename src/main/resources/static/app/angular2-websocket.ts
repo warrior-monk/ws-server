@@ -7,7 +7,7 @@ import {Subject} from "rxjs/Subject";
 
 
 @Injectable()
-export class $WebSocket  {
+export class MyWebSocket  {
 
   private reconnectAttempts = 0;
   private sendQueue = [];
